@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .signup-page {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(176, 196, 196);
+        padding: 20px;
+    }
+
+    .signup-form-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        max-width: 1200px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+    .form-section {
+        width: 50%;
+        padding: 40px;
+        background-color: rgb(251, 253, 253);
+        color: black;
+        border-radius: 8px;
+    }
+
+    .form-section h2 {
+        margin-bottom: 20px;
+        font-size: 28px;
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 16px;
+        color: black;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #0056b3;
+    }
+
+    .button {
+        display: inline-block;
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 8px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+
+
+    .heading6 {
+        margin-top: 20px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .heading6 a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .heading6 a:hover {
+        color: #0056b3;
+    }
+
+    .image-section {
+        width: 50%;
+        margin: 8px;
+        background-color: #f1f1f1;
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/016/727/835/small_2x/thinking-together-group-of-african-american-business-people-working-in-office-together-free-photo.jpg");
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        height: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+        .signup-form-container {
+            flex-direction: column;
+            width: 70%;
+        }
+
+        .image-section {
+            display: none;
+        }
+
+        .form-section {
+            width: 100%;
+            padding: 30px;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .signup-form-container {
+            width: 95%;
+        }
+
+        .form-section {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 245px) {
+        .signup-form-container {
+            width: 100%;
+        }
+
+        .form-section {
+            padding: 10px;
+        }
+    }
+</style>
+<body>
+    <div id="signup-page" class="signup-page">
+        <div class="signup-form-container">
+            <div class="form-section">
+                <h2>Sign Up</h2>
+                <form action="/signup" method="POST">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+
+                    <a href="dashboard.html" class="button">Sign In</a>
+                </form>
+                <h6 class="heading6">Already Have an Account? <a href="main.html">Login</a></h6>
+            </div>
+            <div class="image-section">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/016/727/835/small_2x/thinking-together-group-of-african-american-business-people-working-in-office-together-free-photo.jpg" alt="Sign Up Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

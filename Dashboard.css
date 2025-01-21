@@ -1,0 +1,287 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: rgba(68, 55, 116, 0.4);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 0 2em;
+    box-shadow: 0 4px 6px rgba(92, 80, 80, 0.6);
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: rgba(68, 55, 116, 0.4);
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    color: #ffffff;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ecf0f1;
+    display: block;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+}
+
+.open-btn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgba(68, 55, 116, 0.4);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+.open-btn:target {
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background: none;
+}
+
+.main-content {
+    margin-left: 20px;
+    padding: 20px;
+    color: #333;
+}
+
+#mySidebar:target {
+    left: 0;
+}
+
+#mySidebar:target ~ .open-btn {
+    display: none;
+}
+
+/* style for the drop downs ============================================== */
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.filter-dropdown, .filter-date {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.filter-dropdown:focus, .filter-date:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        margin-left: 10%;
+        margin-right: 10%;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .filter-dropdown, .filter-date {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-container {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 15px;
+    }
+
+    .filter-dropdown, .filter-date {
+        width: 100%;
+        padding: 14px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .filter-container {
+        padding: 15px;
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
+
+/* ==================================== Column Chart styles =================================== */
+
+.chart-container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 300px;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    padding-left: 30px;
+}
+
+.bar {
+    width: 50px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.bar:hover {
+    background-color: #0056b3;
+}
+
+.bar-value {
+    color: black;
+    position: absolute;
+    bottom: 100%;
+}
+
+.x-axis-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.x-axis-label {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+
+.male {
+    background-color: #007bff; 
+}
+
+.female {
+    background-color: #ff69b4; 
+}
+
+
+/* ========================================Pie chart Style=================================== */
+
+.donut-chart-container {
+    width: 300px;
+    height: 300px;
+    margin: 40px auto;
+    position: relative;
+    background: conic-gradient(
+        #007bff 0% 25%,  
+        #ff69b4 25% 45%, 
+        #007bff 45% 65%, 
+        #ff69b4 65% 85%, 
+        #007bff 85% 95%, 
+        #ff69b4 95% 100%
+    );
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.donut-chart-container:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Donut Chart Labels */
+.donut-chart-labels {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.donut-chart-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.donut-chart-color-box {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.donut-chart-label span {
+    font-size: 14px;
+}
+
+/* Add age groups */
+.age-group {
+    font-size: 14px;
+    color: #333;
+}
+
+

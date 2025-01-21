@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slidebar Example</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#mySidebar" class="open-btn">&#9776;</a>
+        <h1>Dashboard</h1>
+    </div>
+
+    <!-- Sidebar ================================== -->
+    <div id="mySidebar" class="sidebar">
+        <a href="#" class="close-btn">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="main-content">
+    </div>
+
+    <!-- ====================dashboard======================== -->
+    <div class="filter-container">
+        <select class="filter-dropdown" name="age">
+            <option value="">Select Age</option>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-50">36-50</option>
+            <option value="51+">51+</option>
+        </select>
+
+        <select class="filter-dropdown" name="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <input type="date" class="filter-date" name="date">
+    </div>
+
+    <!-- ======================Column Chart===================================================== -->
+    <div class="chart-container">
+        <div class="chart-title">Age vs Gender Distribution</div>
+        <div class="chart">
+            <div class="bar male" style="height: 150px;">
+                <span class="bar-value">10 Boys</span>
+            </div>
+            <div class="bar female" style="height: 100px;">
+                <span class="bar-value">5 girls</span>
+            </div>
+            <div class="bar male" style="height: 120px;">
+                <span class="bar-value">8 boys</span>
+            </div>
+            <div class="bar female" style="height: 140px;">
+                <span class="bar-value">7 girls</span>
+            </div>
+            <div class="bar male" style="height: 130px;">
+                <span class="bar-value">9 boys</span>
+            </div>
+            <div class="bar female" style="height: 110px;">
+                <span class="bar-value">6 girls</span>
+            </div>
+        </div>
+        <div class="x-axis-labels">
+            <div class="x-axis-label">18-25</div>
+            <div class="x-axis-label">26-35</div>
+            <div class="x-axis-label">36-50</div>
+        </div>
+    </div>
+
+    <!-- ========================================Pie Chart===================================== -->
+    <div class="donut-chart-container"></div>
+
+    <div class="donut-chart-labels">
+        <div class="donut-chart-label">
+            <div class="donut-chart-color-box" style="background-color: #007bff;"></div>
+            <span>Male</span>
+            <div class="age-group">18-25: 20</div>
+            <div class="age-group">26-35: 25</div>
+            <div class="age-group">36-50: 15</div>
+        </div>
+        <div class="donut-chart-label">
+            <div class="donut-chart-color-box" style="background-color: #ff69b4;"></div>
+            <span>Female</span>
+            <div class="age-group">18-25: 10</div>
+            <div class="age-group">26-35: 15</div>
+            <div class="age-group">36-50: 10</div>
+        </div>
+    </div>
+</body>
+</html>
